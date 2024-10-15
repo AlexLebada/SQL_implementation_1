@@ -12,8 +12,12 @@ mycursor.execute("DROP TABLE IF EXISTS customers")
 mycursor.execute("CREATE TABLE customers (name VARCHAR(255), address VARCHAR(255))")
 
 sql = "INSERT INTO customers (name, address) VALUES (%s, %s)"
-val = ("John", "Highway 21")
-mycursor.execute(sql, val)
+val = [("John", "Highway 21"),
+        ("Ana", "Highway 22"),
+        ("George", "Low way 22"),
+        ("George", "High way 30")
+       ]
+mycursor.executemany(sql, val)
 mydb.commit()
 
 sql = "UPDATE customers SET address = 'Canyon 123' WHERE address ='Highway 21'"
