@@ -6,8 +6,8 @@ import pandas as pd
 
 server = 'tcp:testtest123123.database.windows.net'
 database = 'test'
-username = 'alexlebada'
-password = 'AzureAzure123"'
+username = '#####'
+password = '#####'
 connection_string = 'DRIVER={ODBC Driver 18 for SQL Server};SERVER='+server+', 1433;DATABASE='+database+';UID='+username+';PWD='+password+';ENCRYPT=yes;TrustServerCertificate=no;Connection Timeout=30;'
 conn = pyodbc.connect(connection_string)
 
